@@ -47,4 +47,30 @@
 /* Locking resynchronize hack */
 //#define LOCKING_RESYNC_ENABLE
 
+/* Enable reactive RGB animations */
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_MATRIX_KEYPRESSES
+
 #include "config_led.h"
+
+// #define MK_KINETIC_SPEED
+// #define MOUSEKEY_INITIAL_SPEED 300
+// #define MOUSEKEY_BASE_SPEED 2000
+// #define MOUSEKEY_WHEEL_ACCELERATED_MOVEMENTS 96
+
+#define MK_3_SPEED 
+#define MK_MOMENTARY_ACCEL
+
+#define MK_C_OFFSET_UNMOD 8
+#define MK_C_INTERVAL_UNMOD 4
+
+#define MK_C_OFFSET_2 38 
+#define MK_C_INTERVAL_2 2 
+
+#define MK_C_OFFSET_1 10 
+#define MK_C_INTERVAL_1 2 
+
+#define MK_C_OFFSET_0 3 
+#define MK_C_INTERVAL_0 2 
+
+#define FORCE_NKRO

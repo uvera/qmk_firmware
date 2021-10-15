@@ -26,6 +26,14 @@ WAIT_FOR_USB = no
 CUSTOM_MATRIX = yes
 KEYBOARD_SHARED_EP = yes
 
-# Custom RGB matrix handling
+# Custom RGB matrix handlin
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = SN32F24xB
+
+KEY_LOCK_ENABLE = yes
+
+OPENRGB_ENABLE = yes
+#
+MOUSEKEY_ENABLE = yes
+
+NKRO_ENABLE = yes
