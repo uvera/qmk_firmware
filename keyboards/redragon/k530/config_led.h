@@ -31,3 +31,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DRIVER_LED_TOTAL (61)
 
 #define LED_PIN_ON_STATE 0
+
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_NONE
