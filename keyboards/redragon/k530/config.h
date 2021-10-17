@@ -61,8 +61,8 @@
 #define MK_3_SPEED 
 #define MK_MOMENTARY_ACCEL
 
-#define MK_C_OFFSET_UNMOD 8
-#define MK_C_INTERVAL_UNMOD 4
+#define MK_C_OFFSET_UNMOD 3
+#define MK_C_INTERVAL_UNMOD 2 
 
 #define MK_C_OFFSET_2 38 
 #define MK_C_INTERVAL_2 2 
@@ -70,7 +70,7 @@
 #define MK_C_OFFSET_1 10 
 #define MK_C_INTERVAL_1 2 
 
-#define MK_C_OFFSET_0 3 
+#define MK_C_OFFSET_0 1 
 #define MK_C_INTERVAL_0 2 
 
 #define FORCE_NKRO
