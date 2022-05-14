@@ -100,6 +100,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef SLEEP_LED_ENABLE
 #    include "sleep_led.h"
 #endif
+#ifdef CAPS_WORD_ENABLE
+#    include "caps_word.h"
+#endif
 
 static uint32_t last_input_modification_time = 0;
 uint32_t        last_input_activity_time(void) { return last_input_modification_time; }
@@ -506,6 +509,10 @@ MATRIX_LOOP_END:
 
 #ifdef JOYSTICK_ENABLE
     joystick_task();
+#endif
+
+#ifdef CAPS_WORD_ENABLE
+    caps_word_task();
 #endif
 
 #ifdef DIGITIZER_ENABLE
