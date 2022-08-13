@@ -38,6 +38,13 @@ class TestFixture : public testing::Test {
     const KeymapKey* find_key(const layer_t layer_t, const keypos_t position) const;
     void                     get_keycode(const layer_t layer, const keypos_t position, uint16_t* result) const;
 
+    /**
+     * @brief Taps a combo with `delay_ms` delay between press and release.
+     *
+     * Example: `tap_combo({key_a, key_b})` to tap the chord A + B.
+     */
+    void tap_combo(const std::vector<KeymapKey>& chord_keys, unsigned delay_ms = 1);
+
     void run_one_scan_loop();
     void idle_for(unsigned ms);
 
