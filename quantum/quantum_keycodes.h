@@ -597,7 +597,7 @@ enum quantum_keycodes {
     MACRO_30,
     MACRO_31,
 
-    CAPS_WORD,
+    QK_CAPS_WORD_TOGGLE,
 
     // Start of custom keycode range for keyboards and keymaps - always leave at the end
     SAFE_RANGE
@@ -890,6 +890,9 @@ enum quantum_keycodes {
 #define UC_M_BS UNICODE_MODE_BSD
 #define UC_M_WC UNICODE_MODE_WINC
 
+// Caps Word
+#define CW_TOGG QK_CAPS_WORD_TOGGLE
+
 // Swap Hands
 #define SH_T(kc) (QK_SWAP_HANDS | (kc))
 #define SH_TG (QK_SWAP_HANDS | OP_SH_TOGGLE)
@@ -963,4 +966,3 @@ enum quantum_keycodes {
 #define PB_32 PROGRAMMABLE_BUTTON_32
 #define PROGRAMMABLE_BUTTON_MIN PROGRAMMABLE_BUTTON_1
 #define PROGRAMMABLE_BUTTON_MAX PROGRAMMABLE_BUTTON_32
-#define CAPSWRD CAPS_WORD
