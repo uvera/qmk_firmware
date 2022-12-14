@@ -17,6 +17,7 @@
 #include "print.h"
 #include "process_combo.h"
 #include "action_tapping.h"
+#include "action.h"
 
 #ifdef COMBO_COUNT
 __attribute__((weak)) combo_t key_combos[COMBO_COUNT];
@@ -185,6 +186,9 @@ void clear_combos(void) {
 static inline void dump_key_buffer(void) {
     /* First call start from 0 index; recursive calls need to start from i+1 index */
     static uint8_t key_buffer_next = 0;
+#if TAP_CODE_DELAY > 0
+    bool delay_done = false;
+#endif
 
     if (key_buffer_size == 0) {
         return;
@@ -210,6 +214,24 @@ static inline void dump_key_buffer(void) {
 #endif
         }
         record->event.time = 0;
+
+#if defined(CAPS_WORD_ENABLE) && defined(AUTO_SHIFT_ENABLE)
+        // Edge case: preserve the weak Left Shift mod if both Caps Word and
+        // Auto Shift are on. Caps Word capitalizes by setting the weak Left
+        // Shift mod during the press event, but Auto Shift doesn't send the
+        // key until it receives the release event.
+        del_weak_mods((is_caps_word_on() && get_autoshift_state()) ? ~MOD_BIT(KC_LSFT) : 0xff);
+#else
+        clear_weak_mods();
+#endif // defined(CAPS_WORD_ENABLE) && defined(AUTO_SHIFT_ENABLE)
+
+#if TAP_CODE_DELAY > 0
+        // only delay once and for a non-tapping key
+        if (!delay_done && !is_tap_record(record)) {
+            delay_done = true;
+            wait_ms(TAP_CODE_DELAY);
+        }
+#endif
     }
 
     key_buffer_next = key_buffer_size = 0;
