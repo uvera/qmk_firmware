@@ -68,7 +68,7 @@ bool process_caps_word(uint16_t keycode, keyrecord_t* record) {
                     caps_word_on();
                 }
                 tapped = true;
-                timer  = record->event.time + GET_TAPPING_TERM(keycode, record);
+                timer  = record->event.time + get_tapping_term(keycode, record);
             } else {
                 tapped = false; // Reset when any other key is pressed.
             }
